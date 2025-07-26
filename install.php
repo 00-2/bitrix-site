@@ -40,4 +40,3 @@ if($install_result['rest_only'] === false): ?>
     <?php endif; ?>
 </body>
 <?php endif; ?>
-
