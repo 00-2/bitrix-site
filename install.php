@@ -1,5 +1,5 @@
 <?php
-require_once (__DIR__.'/crest.php');
+require_once ('crest.php');
 
 $install_result = CRest::installApp();
 
@@ -14,13 +14,29 @@ $result = CRest::call(
     'placement.bind',
     [
         'PLACEMENT' => 'CRM_DEAL_DETAIL_TAB',
-        'HANDLER' => $handlerBackUrl,
-        'TITLE' => 'My App'
+        'HANDLER' => 'https://start-bitrix.ru/placement.php',
+       	'TITLE' => 'title',
+        'DESCRIPTION' => 'description',
+        'GROUP_NAME' => 'group',
+        'LANG_ALL' => [
+            'en' => [
+                'TITLE' => 'title',
+                'DESCRIPTION' => 'description',
+                'GROUP_NAME' => 'group'
+            ],
+            'ru' => [
+                'TITLE' => 'заголовок',
+                'DESCRIPTION' => 'описание',
+                'GROUP_NAME' => 'группа'
+            ]
+        ]
     ]
 );
 
-CRest::setLog(['deal_tab' => $result], 'installation');
 
+
+CRest::setLog(['deal_tab' => $result], 'installation');
+print_r($result);
 if($install_result['rest_only'] === false): ?>
 <head>
     <script src="//api.bitrix24.com/api/v1/"></script>
@@ -34,9 +50,10 @@ if($install_result['rest_only'] === false): ?>
 </head>
 <body>
     <?php if($install_result['install'] == true): ?>
-        installation has been finished
+         installation has been finished $result
     <?php else: ?>
         installation error
     <?php endif; ?>
 </body>
 <?php endif; ?>
+
