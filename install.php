@@ -20,7 +20,7 @@ $result = CRest::call(
 );
 
 CRest::setLog(['deal_tab' => $result], 'installation');
-
+print_r($result);
 if($install_result['rest_only'] === false): ?>
 <head>
     <script src="//api.bitrix24.com/api/v1/"></script>
