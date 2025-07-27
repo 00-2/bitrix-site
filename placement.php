@@ -40,7 +40,7 @@ echo '</pre></div>';
 // Получение ID сделки из PLACEMENT_OPTIONS
 $placement_options = json_decode($_REQUEST['PLACEMENT_OPTIONS'] ?? '', true);
 //$deal_id = $placement_options['ID'] ?? null;
-$deal_id = 22125
+$deal_id = 22125;
 if ($deal_id):
 	$url = "http://51.250.13.43:5000/order_card?order_id={$deal_id}";
 	echo "<iframe src=\"{$url}\"></iframe>";
