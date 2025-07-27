@@ -1,42 +1,58 @@
-<?php
+<?
 require_once (__DIR__.'/crest.php');
+
+function displayValue($value) {
+	if (is_array($value)) {
+		$result = '';
+		foreach ($value as $item) $result .= $item.', ';
+		return $result;
+
+	} else return $value;
+}
+
 ?>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="css/app.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.js"
+	<!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"-->
+	<script
+		src="https://code.jquery.com/jquery-3.6.0.js"
 		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 		crossorigin="anonymous"></script>
-	<title>Deal View</title>
-	<style>
-		iframe {
-			width: 100%;
-			height: 95vh;
-			border: none;
-		}
-	</style>
+
+	<title>Placement</title>
 </head>
 <body class="container-fluid">
+<div class="alert alert-success" role="alert"><pre>
+	<?
+	print_r($_REQUEST);
+	?>
+	</pre>
+</div>
+<?
+$placement_options = json_decode($_REQUEST['PLACEMENT_OPTIONS'], true);
 
-<?php
-echo '<div class="alert alert-success" role="alert"><pre>';
-print_r($_REQUEST);
-echo '</pre></div>';
+$deal = CRest::call(
+	'crm.deal.get',
+	[
+		'ID' => $placement_options['ID']
+	]
+);
 
-// Получение ID сделки из PLACEMENT_OPTIONS
-$placement_options = json_decode($_REQUEST['PLACEMENT_OPTIONS'] ?? '', true);
-//$deal_id = $placement_options['ID'] ?? null;
-$deal_id = 22105;
-if ($deal_id) {
-	$url = "http://51.250.13.43:5000/order_card?order_id=22105";// . urlencode($deal_id);
-	echo "<iframe src=\"$url\"></iframe>";
-} else {
-	echo "<div class='alert alert-danger'>Ошибка: ID сделки не найден.</div>";
-}
-?>
-
+if ($deal['error'] == ''):
+	?>
+	<table class="table table-striped">
+		<?foreach ($deal['result'] as $field => $value):?>
+			<tr>
+				<td><?=$field;?></td>
+				<td><?=displayValue($value);?></td>
+			</tr>
+		<?endforeach;?>
+	</table>
+<?endif;?>
 </body>
-</html>
