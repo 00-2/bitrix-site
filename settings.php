@@ -1,4 +1,4 @@
-<?
+<?php
 define('C_REST_CLIENT_ID','local.688804af478249.21612930');//Application ID
 define('C_REST_CLIENT_SECRET','wEtSrOtUVSfVdCPTHzqqRO87woGd3fPkXdKyaQ7Ddsl1uhAaPV');//Application key
 // or
