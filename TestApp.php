@@ -18,6 +18,8 @@ $deal = CRest::call(
 		'ID' => $placement_options['ID']
 	]
 );
+
+$NameDeal = json_decode($deal['TITLE'], true);
 ?>
 <html>
 <head>
@@ -38,7 +40,7 @@ $deal = CRest::call(
 <body class="container-fluid">
 <div class="alert alert-success" role="alert"><pre>
 	<?php
-	print_r($deal);
+	print_r($NameDeal);
 	?>
 	</pre>
 </div>
