@@ -40,7 +40,7 @@ $NameDeal = $deal['result']['TITLE'];
 <body class="container-fluid">
 <div class="alert alert-success" role="alert"><pre>
 	<?php
-	print_r($deal);
+	print_r($NameDeal);
 	?>
 	</pre>
 </div>
