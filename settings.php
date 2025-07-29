@@ -1,6 +1,6 @@
 <?
-define('C_REST_CLIENT_ID','app.6884db0fef5f49.61551449');//Application ID
-define('C_REST_CLIENT_SECRET','beWsnap7FzxTBfFkc9AyIQjQJ8rJg4CInXEVLFrnFRNOOrE0BM');//Application key
+define('C_REST_CLIENT_ID','local.688804af478249.21612930');//Application ID
+define('C_REST_CLIENT_SECRET','wEtSrOtUVSfVdCPTHzqqRO87woGd3fPkXdKyaQ7Ddsl1uhAaPV');//Application key
 // or
 // define('C_REST_WEB_HOOK_URL','https://rest-course.bitrix24.ru/rest/1/j0nzq02mzvzmx9lx/');//url on creat Webhook
 
