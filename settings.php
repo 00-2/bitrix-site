@@ -1,7 +1,7 @@
 <?php
 return [
-    'C_REST_CLIENT_ID' => 'local.ваш_client_id',
-    'C_REST_CLIENT_SECRET' => 'ваш_client_secret',
+    'C_REST_CLIENT_ID' => 'local.688804af478249.21612930',
+    'C_REST_CLIENT_SECRET' => 'wEtSrOtUVSfVdCPTHzqqRO87woGd3fPkXdKyaQ7Ddsl1uhAaPV',
 ];?>
 <?
 define('C_REST_CLIENT_ID','local.688804af478249.21612930');//Application ID
