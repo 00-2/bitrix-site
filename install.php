@@ -19,8 +19,17 @@ $result = CRest::call(
     ]
 );
 
+$TestApp = CRest::call(
+    'placement.bind',
+    [
+        'PLACEMENT' => 'CRM_DEAL_DETAIL_TAB',
+        'HANDLER' => 'TestApp',
+        'TITLE' => 'Test app'
+    ]
+);
+
 CRest::setLog(['deal_tab' => $result], 'installation');
-print_r($result); 
+CRest::setLog(['deal_tab' => $TestApp], 'installation');
 if($install_result['rest_only'] === false): ?>
 <head>
     <script src="//api.bitrix24.com/api/v1/"></script>
