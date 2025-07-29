@@ -19,7 +19,7 @@ $deal = CRest::call(
 	]
 );
 
-$NameDeal = json_decode($deal['TITLE'], true);
+$NameDeal = $deal['TITLE'];
 ?>
 <html>
 <head>
