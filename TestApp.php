@@ -30,7 +30,7 @@ function displayValue($value) {
 <body class="container-fluid">
 <div class="alert alert-success" role="alert"><pre>
 	<?
-	print_r($deal);
+	print_r($_REQUEST);
 	?>
 	</pre>
 </div>
@@ -47,12 +47,10 @@ $deal = CRest::call(
 if ($deal['error'] == ''):
 	?>
 	<table class="table table-striped">
-		<?foreach ($deal['result'] as $field => $value):?>
-			<tr>
-				<td><?=$field;?></td>
-				<td><?=displayValue($value);?></td>
-			</tr>
-		<?endforeach;?>
+		<tr>
+			<td><?=$field;?></td>
+			<td><?=displayValue($value);?></td>
+		</tr>
 	</table>
 <?endif;?>
 </body>
