@@ -30,7 +30,7 @@ function displayValue($value) {
 <body class="container-fluid">
 <div class="alert alert-success" role="alert"><pre>
 	<?
-	print_r($_REQUEST);
+	print_r($deal);
 	?>
 	</pre>
 </div>
