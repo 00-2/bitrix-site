@@ -1,6 +1,6 @@
 <?php
-$order_id = 22208;
-$exec_vk_id = 305852380;
+$order_id = 19080;
+$exec_vk_id = 549839074;
 $url = "https://startproj.ru/order_card/formal?order_id=$order_id&exec_vk_id=$exec_vk_id";
 ?>
 <!DOCTYPE html>
