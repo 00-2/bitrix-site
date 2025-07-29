@@ -19,11 +19,16 @@ $result = CRest::call(
     ]
 );
 
+$handlerBackUrlTest = ($_SERVER['HTTPS'] === 'on' || $_SERVER['SERVER_PORT'] === '443' ? 'https' : 'http') . '://'
+    . $_SERVER['SERVER_NAME']
+    . (in_array($_SERVER['SERVER_PORT'], ['80', '443'], true) ? '' : ':' . $_SERVER['SERVER_PORT'])
+    . str_replace($_SERVER['DOCUMENT_ROOT'], '',__DIR__)
+    . '/TestApp.php';
 $TestApp = CRest::call(
     'placement.bind',
     [
         'PLACEMENT' => 'CRM_DEAL_DETAIL_TAB',
-        'HANDLER' => 'TestApp',
+        'HANDLER' => $handlerBackUrlTest,
         'TITLE' => 'Test app'
     ]
 );
