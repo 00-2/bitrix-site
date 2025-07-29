@@ -19,31 +19,6 @@ $deal = CRest::call(
 	]
 );
 
-require_once('crest.php');
-
-$TestChange = CRest::call(
-    'crm.deal.update',
-    [
-        'ID' => 123,
-        'FIELDS' => [
-            'TITLE' => 'Новое название сделки!',
-            'TYPE_ID' => 'GOODS',
-            'STAGE_ID' => 'WON',
-            'IS_RECCURING' => 'Y',
-            'IS_RETURN_CUSTOMER' => 'Y',
-            'OPPORTUNITY' => 9999.99,
-            'IS_MANUAL_OPPORTUNITY' => 'Y',
-            'ASSIGNED_BY_ID' => 1,
-            'UF_CRM_1725365197310' => 'Строка',
-            'PARENT_ID_1032' => 1,
-        ],
-        'PARAMS' => [
-            'REGISTER_SONET_EVENT' => 'N',
-            'REGISTER_HISTORY_EVENT' => 'N',
-        ],
-    ]
-);
-
 $NameDeal = $deal['result']['TITLE'];
 ?>
 <html>
@@ -65,7 +40,7 @@ $NameDeal = $deal['result']['TITLE'];
 <body class="container-fluid">
 <div class="alert alert-success" role="alert"><pre>
 	<?php
-	print_r($TestChange);
+	print_r($NameDeal);
 	?>
 	</pre>
 </div>
