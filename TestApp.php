@@ -48,7 +48,7 @@ if ($deal['error'] == ''):
 	?>
 	<table class="table table-striped">
 		<tr>
-			<td><?=displayValue($value);?></td>
+			<td><?=$deal ?></td>//displayValue($value);
 		</tr>
 	</table>
 <?endif;?>
