@@ -19,7 +19,7 @@ $deal = CRest::call(
 	]
 );
 
-$NameDeal = $deal['result']['TITLE'];
+//$NameDeal = $deal['result']['TITLE'];
 ?>
 <html>
 <head>
