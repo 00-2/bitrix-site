@@ -1,4 +1,4 @@
-<?
+<?php
 require_once (__DIR__.'/crest.php');
 
 function displayValue($value) {
@@ -48,7 +48,6 @@ if ($deal['error'] == ''):
 	?>
 	<table class="table table-striped">
 		<tr>
-			<td><?=$field;?></td>
 			<td><?=displayValue($value);?></td>
 		</tr>
 	</table>
