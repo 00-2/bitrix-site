@@ -10,6 +10,14 @@ function displayValue($value) {
 	} else return $value;
 }
 
+$placement_options = json_decode($_REQUEST['PLACEMENT_OPTIONS'], true);
+
+$deal = CRest::call(
+	'crm.deal.get',
+	[
+		'ID' => $placement_options['ID']
+	]
+);
 ?>
 <html>
 <head>
@@ -30,19 +38,12 @@ function displayValue($value) {
 <body class="container-fluid">
 <div class="alert alert-success" role="alert"><pre>
 	<?php
-	print_r($_REQUEST);
+	print_r($deal);
 	?>
 	</pre>
 </div>
 <?php
-$placement_options = json_decode($_REQUEST['PLACEMENT_OPTIONS'], true);
 
-$deal = CRest::call(
-	'crm.deal.get',
-	[
-		'ID' => $placement_options['ID']
-	]
-);
 
 if ($deal['error'] == ''):
 	?>
