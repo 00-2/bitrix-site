@@ -40,7 +40,7 @@ $deal = CRest::call(
 <body class="container-fluid">
 <div class="alert alert-success" role="alert"><pre>
 	<?php
-	print_r($NameDeal);
+	//print_r($NameDeal);
 	?>
 	</pre>
 </div>
