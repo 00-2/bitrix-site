@@ -1,4 +1,4 @@
-<?
+<?php
 require_once (__DIR__.'/crest.php');
 
 function displayValue($value) {
@@ -10,6 +10,16 @@ function displayValue($value) {
 	} else return $value;
 }
 
+$placement_options = json_decode($_REQUEST['PLACEMENT_OPTIONS'], true);
+
+$deal = CRest::call(
+	'crm.deal.get',
+	[
+		'ID' => $placement_options['ID']
+	]
+);
+
+//$NameDeal = $deal['result']['TITLE'];
 ?>
 <html>
 <head>
@@ -29,30 +39,23 @@ function displayValue($value) {
 </head>
 <body class="container-fluid">
 <div class="alert alert-success" role="alert"><pre>
-	<?
-	print_r($deal);
+	<?php
+	//print_r($NameDeal);
 	?>
 	</pre>
 </div>
-<?
-$placement_options = json_decode($_REQUEST['PLACEMENT_OPTIONS'], true);
+<?php
 
-$deal = CRest::call(
-	'crm.deal.get',
-	[
-		'ID' => $placement_options['ID']
-	]
-);
 
 if ($deal['error'] == ''):
 	?>
 	<table class="table table-striped">
-		<?foreach ($deal['result'] as $field => $value):?>
+		<?php foreach ($deal['result'] as $field => $value):?>
 			<tr>
 				<td><?=$field;?></td>
 				<td><?=displayValue($value);?></td>
 			</tr>
-		<?endforeach;?>
+		<?php endforeach;?>
 	</table>
-<?endif;?>
+<?php endif;?>
 </body>
