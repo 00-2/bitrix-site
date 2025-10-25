@@ -15,7 +15,7 @@ $result = CRest::call(
     [
         'PLACEMENT' => 'CRM_DEAL_DETAIL_TAB',
         'HANDLER' => $handlerBackUrl,
-        'TITLE' => 'My App'
+        'TITLE' => 'Чат с клиентом'
     ]
 );
 
