@@ -41,8 +41,9 @@ function show_val($v) {
 
 // 5) Если поля найдены — готовим URL
 $url = null;
+$backend_site = "production.startproj.ru";
 if ($haveFields) {
-    $url = 'https://startproj.ru/order_card/formal?' . http_build_query([
+    $url = 'https://'+$backend_site+'/order_card/formal?' . http_build_query([
         'order_id'   => $orderId,
         'exec_vk_id' => $execVkId,
     ]);
