@@ -1,7 +1,7 @@
 <?php
 $order_id = 22208;
 $exec_vk_id = 305852380;
-$backend_site = "production.startproj.ru";
+$backend_site = "startproj.ru";
 $url = "https://$backend_site/order_card/formal?order_id=$order_id&exec_vk_id=$exec_vk_id";
 ?>
 <!DOCTYPE html>
